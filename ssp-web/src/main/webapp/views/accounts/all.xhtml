@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:body>
+    <ui:composition template="/WEB-INF/tags/layout.xhtml">
+        <ui:define name="content">
+
+            <div class="card" style="min-height: 500px">
+
+
+            <h:form id="form1">
+
+
+
+                <legend>Accounts list</legend>
+
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+
+                <p:growl id="messages" showDetail="true" life="3000"/>
+
+
+
+
+                <p:dataTable id="objects" var="object"
+                             value="#{accountMB.list}" styleClass="et_datatable"
+                             emptyMessage="Empty..." editable="true" paginator="true"
+                             rows="10"
+                             paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                             rowsPerPageTemplate="5,10,15" selectionMode="single"
+                             rowKey="#{object.id}"
+                             filteredValue="#{accountMB.listSelected}">
+
+                    <p:column headerText="Username" sortBy="#{object.username}"
+                              filterBy="#{object.username}" filterMatchMode="contains">
+                        <h:outputText value="#{object.username}"/>
+                    </p:column>
+
+                    <p:column headerText="Email" sortBy="#{object.email}"
+                              filterBy="#{object.email}" filterMatchMode="contains">
+                        <h:outputText value="#{object.email}"/>
+                    </p:column>
+
+
+                    <p:column headerText="Enabled" sortBy="#{object.enabled}"
+                              filterBy="#{object.enabled}" filterMatchMode="contains">
+                        <h:outputText value="#{object.enabled}"/>
+                    </p:column>
+
+
+                    <p:column headerText="Delete" style="width:8%">
+                        <p:commandLink update=":form1:display"
+                                       oncomplete="PF('confirmDeleteDlg').show()"
+                                       image="ui-icon ui-icon-close" title="Delete">
+                            <f:setPropertyActionListener value="#{object}"
+                                                         target="#{accountMB.beanSelected}"/>
+                            <h:outputText styleClass="ui-icon ui-icon-close"/>
+                        </p:commandLink>
+                    </p:column>
+                    <p:column headerText="Details" style="width:8%">
+                        <p:commandLink update=":form1:display"
+                                       oncomplete="PF('detailsDlg').show()" image="ui-icon ui-icon-search"
+                                       title="Details">
+                            <f:setPropertyActionListener value="#{object}"
+                                                         target="#{accountMB.beanSelected}"/>
+                            <h:outputText styleClass="ui-icon ui-icon-search"/>
+                        </p:commandLink>
+                    </p:column>
+
+
+                </p:dataTable>
+
+
+                <p:dialog header="Remove" widgetVar="confirmDeleteDlg"
+                          resizable="false" width="400" height="60" showEffect="clip"
+                          hideEffect="clip" modal="true">
+
+                    <p:outputPanel layout="block" style="text-align:center">
+                        <p:commandButton value="Yes"
+                                         update=":form1:messages,:form1:objects"
+                                         actionListener="#{accountMB.delete}"
+                                         oncomplete="PF('confirmDeleteDlg').hide()"/>
+                        <p:commandButton value="No" onclick="PF('confirmDeleteDlg').hide()"
+                                         type="button"/>
+                    </p:outputPanel>
+
+                </p:dialog>
+
+
+                <p:dialog header="Update" widgetVar="detailsDlg"
+                          resizable="false" width="750" height="400" showEffect="clip"
+                          hideEffect="clip" modal="true">
+
+
+
+
+
+                    <h:panelGrid id="display" columns="2" cellpadding="4"
+                                 style="margin:0 auto;">
+
+
+                        <h:outputText value="Username"
+                                      style="padding-left: 30px; padding-right: 30px;"/>
+
+                        <h:outputText value="#{accountMB.beanSelected.username}"/>
+
+
+                        <h:outputText value="Email"
+                                      style="padding-left: 30px; padding-right: 30px;"/>
+                        <p:inputText value="#{accountMB.beanSelected.email}"/>
+
+
+
+                        <h:outputText value="Enabled"
+                                      style="padding-left: 30px; padding-right: 30px;"/>
+                        <p:selectBooleanCheckbox value="#{accountMB.beanSelected.enabled}" />
+
+
+
+                    </h:panelGrid>
+
+                    <p:outputPanel layout="block" style="text-align:center">
+                        <br/>
+                        <br/>
+                        <p:commandButton value="Update"
+                                         update=":form1:objects, :form1:messages"
+                                         actionListener="#{accountMB.update}"
+                                         oncomplete="PF('detailsDlg').hide()"/>
+                        <p:commandButton value="Cancel" onclick="PF('detailsDlg').hide()"
+                                         type="button"/>
+                    </p:outputPanel>
+
+                </p:dialog>
+
+
+
+
+
+
+            </h:form>
+            </div>
+
+
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>
