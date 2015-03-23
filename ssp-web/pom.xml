@@ -13,7 +13,7 @@
 		<maven.test.failure.ignore>true</maven.test.failure.ignore>
 		<spring.framework.version>4.0.3.RELEASE</spring.framework.version>
 		<spring.security.version>3.2.5.RELEASE</spring.security.version>
-		<ssp.service>${basedir}/../ssp-service/target/ssp-service-0.0.1-SNAPSHOT.jar</ssp.service>
+		<ssp.service>/Users/jacky/Documents/workspace-sts-3.5.1.RELEASE/spring-security-primefaces-tutorial//ssp-service/target/ssp-service-0.0.1-SNAPSHOT.jar</ssp.service>
 	</properties>
 
 	<repositories>
