@@ -11,14 +11,6 @@ import org.springframework.stereotype.Component;
 
 import scala.annotation.meta.getter;
 
-
-public class Main {
-
-	
-}
-
-
-
 @Component 
 class RolesList {
 	

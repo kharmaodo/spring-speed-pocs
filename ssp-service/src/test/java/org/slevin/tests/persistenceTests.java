@@ -28,7 +28,6 @@ public class persistenceTests {
 
 
     @Test
-    @Transactional
     public void testDaoImpl() throws Exception {
         Account user = new Account();
         user.setEmail("mail@google.com");
