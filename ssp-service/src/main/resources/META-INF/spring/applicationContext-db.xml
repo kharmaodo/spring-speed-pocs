@@ -21,22 +21,7 @@
     <tx:annotation-driven transaction-manager="transactionManager" />
 
 
-    <!-- Entity Manager Factory -->
-    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="dataSource" ref="dataSource" />
-        <property name="jpaVendorAdapter">
-            <!-- Define Hibernate JPA Vendor Adapter -->
-            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-                <property name="generateDdl" value="true" />
-                <property name="database" value="H2" />
-            </bean>
-        </property>
-        <!-- Persistence Unit -->
-        <property name="persistenceUnitName" value="persistenceUnit" />
-        <property name="persistenceXmlLocation" value="classpath:META-INF/persistence.xml" />
-           
-    </bean>
-
+    <!-- Datasource -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${h2.driverClassName}" />
         <property name="url" value="${h2.url}" />
@@ -44,9 +29,26 @@
         <property name="password" value="${h2.password}" />
     </bean>
 
+    <!-- Entity Manager Factory -->
+    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
 
-    <bean
-            class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="packagesToScan" value="org.slevin.common" />
+        <property name="persistenceUnitName" value="persistenceUnit" />
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+        </property>
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.hbm2ddl.auto">create-drop</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+            </props>
+        </property>
+    </bean>
+    <bean id="persistenceExceptionTranslationPostProcessor"
+          class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+
 
 
 </beans>
