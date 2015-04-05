@@ -9,6 +9,7 @@
   	<module>ssp-web</module>
   	<module>ssp-service</module>
   	<module>ssp-selenium</module>
+      <module>ssp-batch</module>
   </modules>
 
     <properties>
