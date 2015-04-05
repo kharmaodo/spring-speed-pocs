@@ -23,7 +23,7 @@ public class Main {
                 new ClassPathXmlApplicationContext(springConfig);
 
         JobLauncher jobLauncher = (JobLauncher) context.getBean("jobLauncher");
-        Job job = (Job) context.getBean("helloWorldJob");
+        Job job = (Job) context.getBean("fromCsvToXmlAndCsvToXmlJob");
 
         try {
 
@@ -33,6 +33,7 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
 
         System.out.println("Done");
 

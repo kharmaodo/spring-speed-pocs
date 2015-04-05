@@ -10,8 +10,6 @@
     <!-- Scan for property file -->
     <context:property-placeholder location="classpath:META-INF/spring/database.properties" />
 
-
-
     <!-- Transaction Manager -->
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory" />
@@ -19,7 +17,6 @@
     </bean>
     <!-- Detect @Transactional -->
     <tx:annotation-driven transaction-manager="transactionManager" />
-
 
     <!-- Datasource -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
