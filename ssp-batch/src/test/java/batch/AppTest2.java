@@ -11,8 +11,7 @@ import org.testng.annotations.Test;
 
 @ContextConfiguration(locations = {
         "classpath:META-INF/spring/jobs/job-accounts.xml",
-        "classpath:META-INF/spring/config/applicationContext.xml",
-        "classpath:META-INF/spring/config/database.xml",
+        "classpath:META-INF/spring/config/context.xml",
         "classpath:spring/batch/config/test-context.xml"})
 public class AppTest2 extends AbstractTestNGSpringContextTests {
 

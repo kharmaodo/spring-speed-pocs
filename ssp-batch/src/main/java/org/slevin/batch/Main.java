@@ -16,7 +16,7 @@ public class Main {
 
         String[] springConfig  =
                 {
-                        "classpath*:META-INF/spring/config/applicationContext.xml",
+                        "classpath*:META-INF/spring/config/context.xml",
                         "classpath*:META-INF/spring/jobs/job-accounts.xml"
                 };
 
