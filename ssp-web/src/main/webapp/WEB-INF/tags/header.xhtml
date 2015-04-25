@@ -11,7 +11,9 @@
 <body>
 <ui:composition>
 
-    <ui:param name="root" value="#{request.scheme}://#{request.serverName}:#{request.serverPort}#{request.contextPath}"/>
+    <ui:param name="root"
+              value="#{request.scheme}://#{request.serverName}:#{request.serverPort}#{request.contextPath}"/>
+
     <div id="navbar-full">
         <div id="navbar">
             <!--
@@ -39,32 +41,32 @@
 
                         <!-- Admin Area -->
 
-                            <ul class="nav navbar-nav">
+                        <ul class="nav navbar-nav">
 
 
-                                <sec:authorize access="hasAnyRole('ROLE_ADMIN')">
+                            <sec:authorize access="hasAnyRole('ROLE_ADMIN')">
                                 <!-- Users and accounts -->
-                                <li class="dropdown"><a href="#" class="dropdown-toggle"
+                                <li class="dropdown"><a href="#" class="dropdown-toggle" id="accountsMenu"
                                                         data-toggle="dropdown">Accounts <span class="caret"></span></a>
                                     <ul class="dropdown-menu" role="menu">
-                                        <li><a
+                                        <li><a id="accountsAll"
                                                 href="#{request.contextPath}/accounts/all">
                                             All accounts </a></li>
                                         <li class="divider"></li>
-                                        <li><a href="#{request.contextPath}/accounts/new">
+                                        <li><a id="accountNew" href="#{request.contextPath}/accounts/new">
                                             New account </a></li>
                                     </ul>
                                 </li>
                                 <!--End Users and accounts -->
 
-                                </sec:authorize>
-                            </ul>
+                            </sec:authorize>
+                        </ul>
 
 
-                            <!-- Search Form -->
+                        <!-- Search Form -->
 
 
-                            <!--End Search Form -->
+                        <!--End Search Form -->
 
                         <!--End Admin Area -->
 
@@ -74,27 +76,26 @@
                         <ul class="nav navbar-nav navbar-right">
 
                             <sec:authorize access="isAnonymous()">
-                                    <li><a href="#{request.contextPath}/login"
-                                           class="btn btn-round btn-default">Login</a></li>
+                                <li><a href="#{request.contextPath}/login"
+                                       class="btn btn-round btn-default">Login</a></li>
                             </sec:authorize>
 
                             <sec:authorize access="isAuthenticated()">
-                                    <li>
+                                <li>
 
 
+                                    <form method="post"
+                                          action="#{request.contextPath}/j_spring_security_logout">
+                                        <input type="hidden" name="${_csrf.parameterName}"
+                                               value="${_csrf.token}"/>
 
-                                        <form method="post"
-                                              action="#{request.contextPath}/j_spring_security_logout">
-                                            <input type="hidden" name="${_csrf.parameterName}"
-                                                   value="${_csrf.token}"/>
+                                        <input
+                                                class="btn btn-round btn-default" type="submit"
+                                                value="Logout"></input>
 
-                                            <input
-                                                    class="btn btn-round btn-default" type="submit"
-                                                    value="Logout"></input>
+                                    </form>
 
-                                              </form>
-
-                                    </li>
+                                </li>
                             </sec:authorize>
                             <!--End Connection Area -->
 

@@ -1,7 +1,6 @@
 Feature: Login on ssp-web
   As an user
   I want to login
-  So...
 
   Scenario: login page
     Given the email "admin" and password "admin"

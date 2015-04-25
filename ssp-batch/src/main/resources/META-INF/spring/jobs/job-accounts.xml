@@ -12,11 +12,6 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
 	">
 
-
-    <import resource="classpath:META-INF/spring/config/database.xml" />
-    <import resource="classpath:META-INF/spring/applicationContext-db.xml" />
-
-
     <bean id="report" class="org.slevin.common.Account" scope="prototype" />
     <bean id="itemProcessor" class="org.slevin.batch.processor.AccountItemProcessor" />
 
@@ -82,11 +77,7 @@
 
 
 
-    <!-- Read from xml
-    <batch:job id="fromXmlToCsvJob">
-
-    </batch:job>-->
-
+    <!-- Read from xml -->
 
     <bean id="xmlItemReader"
           class="org.springframework.batch.item.xml.StaxEventItemReader">
@@ -121,25 +112,6 @@
                 </property>
             </bean>
         </property>
-    </bean>
-
-
-    <!-- stored job-meta in database -->
-    <bean id="jobRepository"
-          class="org.springframework.batch.core.repository.support.JobRepositoryFactoryBean">
-        <property name="dataSource" ref="dataSource" />
-        <property name="transactionManager" ref="transactionManager" />
-        <property name="databaseType" value="HSQL" />
-        <property name="isolationLevelForCreate" value="ISOLATION_DEFAULT"/>
-    </bean>
-
-       <bean id="transactionManager"
-             class="org.springframework.batch.support.transaction.ResourcelessTransactionManager" />
-
-
-    <bean id="jobLauncher"
-          class="org.springframework.batch.core.launch.support.SimpleJobLauncher">
-        <property name="jobRepository" ref="jobRepository" />
     </bean>
 
 

@@ -1,4 +1,4 @@
-package org.slevin.cucumber;
+package org.slevin.cucumber.login;
 
 import cucumber.annotation.en.Given;
 import cucumber.annotation.en.Then;

@@ -10,6 +10,7 @@
   	<module>ssp-service</module>
   	<module>ssp-selenium</module>
       <module>ssp-batch</module>
+      <module>ssp-batch-mongodb</module>
   </modules>
 
     <properties>
