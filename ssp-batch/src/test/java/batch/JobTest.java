@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
         "classpath:META-INF/spring/jobs/job-accounts.xml",
         "classpath:META-INF/spring/config/context.xml",
         "classpath:spring/batch/config/test-context.xml"})
-public class AppTest {
+public class JobTest {
 
     @Autowired
     private JobLauncherTestUtils jobLauncherTestUtils;

@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
         "classpath:META-INF/spring/jobs/job-accounts.xml",
         "classpath:META-INF/spring/config/context.xml",
         "classpath:spring/batch/config/test-context.xml"})
-public class AppTest2 extends AbstractTestNGSpringContextTests {
+public class JobExecutionTest extends AbstractTestNGSpringContextTests {
 
 	@Autowired
 	private JobLauncherTestUtils jobLauncherTestUtils;
