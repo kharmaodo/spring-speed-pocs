@@ -1,1 +1,1 @@
-# spring-security-primefaces-tutorial
+# spring-speed-poc
