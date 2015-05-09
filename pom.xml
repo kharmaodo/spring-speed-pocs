@@ -11,6 +11,7 @@
   	<module>ssp-selenium</module>
       <module>ssp-batch</module>
       <module>ssp-batch-mongodb</module>
+      <module>ssp-ng</module>
   </modules>
 
     <properties>
