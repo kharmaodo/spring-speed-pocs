@@ -20,10 +20,11 @@ public class ShoppingListController {
 		return shoppingListService.getAll();
 	}
 
-    @RequestMapping(value = "/all", method = RequestMethod.GET)
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public Long getCount() {
-        return shoppingListService.count();
+    public void getHello() {
+        System.out.println("@@@@ HIIIIIII THERE");
     }
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)

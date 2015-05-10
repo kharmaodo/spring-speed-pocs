@@ -1,8 +1,12 @@
 'use strict';
 
 /* Services */
-angular.module('shopping-list.services', ['ngResource']).
+var shopingList = angular.module('shopping-list.services', ['ngResource']);
 
-factory('ShoppingList', function($resource){
+
+
+var list = function($resource){
 	return $resource('api/shop/:id', {id:'@id'});
-});
+};
+
+shopingList.factory('ShoppingList', [ '$resource', list ]);
