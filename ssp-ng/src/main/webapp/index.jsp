@@ -5,9 +5,6 @@
     <title>Shopping List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href='http://fonts.googleapis.com/css?family=Nixie+One' rel='stylesheet' type='text/css'>
-    <link href="lib/fontello/css/fontello.css" rel="stylesheet">
-    <link href="lib/fontello/css/animation.css" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body ng-controller="HomeController">
