@@ -74,8 +74,6 @@ public class AccountMB implements Serializable {
 
     public void save() {
         try {
-
-
             if(bean.getPassword().equals(this.passwordCheck)){
                 this.bean.setPassword(Account.md5(this.bean.getPassword()));
                 accountService.persist(this.bean);

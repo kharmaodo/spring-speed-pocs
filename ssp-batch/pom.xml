@@ -5,18 +5,14 @@
     <parent>
         <artifactId>spring-speed-poc</artifactId>
         <groupId>org.slevin</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.2.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>ssp-batch</artifactId>
+    <name>ssp-batch</name>
     <packaging>jar</packaging>
 
-    <properties>
-        <spring.framework.version>4.0.3.RELEASE</spring.framework.version>
-        <spring.batch.version>3.0.3.RELEASE</spring.batch.version>
-        <ssp.service>/Users/jacky/Documents/workspace-sts-3.5.1.RELEASE/spring-speed-poc/ssp-service/target/ssp-service-0.0.1-SNAPSHOT.jar</ssp.service>
-    </properties>
 
     <dependencies>
 
@@ -24,34 +20,27 @@
         <dependency>
             <groupId>org.slevin</groupId>
             <artifactId>ssp-service</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>system</scope>
-            <systemPath>${ssp.service}</systemPath>
         </dependency>
 
         <!-- Spring ORM -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
-            <version>${spring.framework.version}</version>
         </dependency>
         <!-- Spring XML to/back object -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-oxm</artifactId>
-            <version>${spring.framework.version}</version>
         </dependency>
         <!-- Spring CONTEXT -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>${spring.framework.version}</version>
         </dependency>
         <!-- Spring Tests -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>${spring.framework.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -59,58 +48,49 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
-            <version>${spring.framework.version}</version>
         </dependency>
 
         <!-- Spring Batch dependencies -->
         <dependency>
             <groupId>org.springframework.batch</groupId>
             <artifactId>spring-batch-core</artifactId>
-            <version>${spring.batch.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.batch</groupId>
             <artifactId>spring-batch-infrastructure</artifactId>
-            <version>${spring.batch.version}</version>
         </dependency>
         <!-- Spring Batch unit test -->
         <dependency>
             <groupId>org.springframework.batch</groupId>
             <artifactId>spring-batch-test</artifactId>
-            <version>${spring.batch.version}</version>
         </dependency>
 
         <!-- Hibernate 4.3.6 core library library -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>4.3.6.Final</version>
         </dependency>
         <!-- Hibernate 4.3.6 JPA support -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>4.3.6.Final</version>
         </dependency>
         <!-- Hibernate Validator -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <version>4.3.1.Final</version>
         </dependency>
 
         <!-- H2 driver connector library -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <version>1.3.156</version>
         </dependency>
 
         <!-- Junit -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
             <scope>test</scope>
         </dependency>
 
@@ -118,7 +98,6 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.8.5</version>
             <scope>test</scope>
         </dependency>
 
@@ -140,6 +119,10 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>

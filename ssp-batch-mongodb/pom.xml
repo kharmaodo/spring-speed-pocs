@@ -5,98 +5,77 @@
     <parent>
         <artifactId>spring-speed-poc</artifactId>
         <groupId>org.slevin</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.2.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>ssp-batch-mongodb</artifactId>
-
-    <properties>
-        <jdk.version>1.6</jdk.version>
-        <spring.framework.version>4.0.3.RELEASE</spring.framework.version>
-        <spring.batch.version>3.0.3.RELEASE</spring.batch.version>
-        <spring.data.version>1.2.1.RELEASE</spring.data.version>
-        <mongodb.driver.version>2.11.2</mongodb.driver.version>
-        <ssp.service>/Users/jacky/Documents/workspace-sts-3.5.1.RELEASE/spring-speed-poc/ssp-service/target/ssp-service-0.0.1-SNAPSHOT.jar</ssp.service>
-    </properties>
+    <name>ssp-batch-mongodb</name>
 
     <dependencies>
     <!-- SSP SERVICE -->
     <dependency>
         <groupId>org.slevin</groupId>
         <artifactId>ssp-service</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-        <scope>system</scope>
-        <systemPath>${ssp.service}</systemPath>
+
+
     </dependency>
 
     <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-aop</artifactId>
-        <version>${spring.framework.version}</version>
     </dependency>
 
         <!-- Spring Core -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
-            <version>${spring.framework.version}</version>
         </dependency>
 
         <!-- Spring XML to/back object -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-oxm</artifactId>
-            <version>${spring.framework.version}</version>
         </dependency>
 
         <!-- Spring Batch dependencies -->
         <dependency>
             <groupId>org.springframework.batch</groupId>
             <artifactId>spring-batch-core</artifactId>
-            <version>${spring.batch.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.batch</groupId>
             <artifactId>spring-batch-infrastructure</artifactId>
-            <version>${spring.batch.version}</version>
         </dependency>
 
         <!-- Spring Batch unit test -->
         <dependency>
             <groupId>org.springframework.batch</groupId>
             <artifactId>spring-batch-test</artifactId>
-            <version>${spring.batch.version}</version>
         </dependency>
 
         <!-- MongoDB database driver -->
         <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongo-java-driver</artifactId>
-            <version>${mongodb.driver.version}</version>
         </dependency>
 
         <!-- Spring data mongodb -->
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-mongodb</artifactId>
-            <version>${spring.data.version}</version>
         </dependency>
 
         <!-- Junit -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
         </dependency>
 
         <!-- Testng -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.8.5</version>
-            <scope>test</scope>
         </dependency>
 
     </dependencies>
@@ -118,8 +97,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
-                    <source>${jdk.version}</source>
-                    <target>${jdk.version}</target>
+                    <source>1.6</source>
+                    <target>1.6</target>
                 </configuration>
             </plugin>
         </plugins>
