@@ -11,13 +11,13 @@ import java.util.List;
 @Data
 public class ShoppingList {
 
-	@Id
-	private String id;
+    @Id
+    private String id;
 
-	private String name;
+    private String name;
 
-	private Date lastViewDate;
+    private Date lastViewDate;
 
-	private List<Item> items;
+    private List<Item> items;
 
 }

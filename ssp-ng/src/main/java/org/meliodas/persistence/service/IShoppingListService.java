@@ -6,15 +6,15 @@ import java.util.List;
 
 public interface IShoppingListService {
 
-	public List<ShoppingList> getAll();
+    public List<ShoppingList> getAll();
 
-	ShoppingList findOne(String listId);
+    ShoppingList findOne(String listId);
 
-	public void create(ShoppingList shoppingList);
+    public void create(ShoppingList shoppingList);
 
-	void update(String id, ShoppingList shoppingList);
+    void update(String id, ShoppingList shoppingList);
 
-	void delete(String id);
+    void delete(String id);
 
     Long count();
 

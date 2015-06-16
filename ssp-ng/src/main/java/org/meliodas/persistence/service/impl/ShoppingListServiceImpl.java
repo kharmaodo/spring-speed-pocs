@@ -14,40 +14,40 @@ import java.util.List;
 @Service
 public class ShoppingListServiceImpl implements IShoppingListService {
 
-	@Autowired
-	ShoppingListRepository shoppingListRepository;
+    @Autowired
+    ShoppingListRepository shoppingListRepository;
 
-	@Override
-	public List<ShoppingList> getAll() {
-		return shoppingListRepository.findAll(new Sort(Direction.DESC,
-				"lastViewDate"));
-	}
+    @Override
+    public List<ShoppingList> getAll() {
+        return shoppingListRepository.findAll(new Sort(Direction.DESC,
+                "lastViewDate"));
+    }
 
-	@Override
-	public ShoppingList findOne(String id) {
-		ShoppingList shoppingList = shoppingListRepository.findOne(id);
-		shoppingList.setLastViewDate(new Date());
-		shoppingListRepository.save(shoppingList);
-		return shoppingList;
-	}
+    @Override
+    public ShoppingList findOne(String id) {
+        ShoppingList shoppingList = shoppingListRepository.findOne(id);
+        shoppingList.setLastViewDate(new Date());
+        shoppingListRepository.save(shoppingList);
+        return shoppingList;
+    }
 
-	@Override
-	public void create(ShoppingList shoppingList) {
-		shoppingList.setLastViewDate(new Date());
-		shoppingListRepository.save(shoppingList);
-	}
+    @Override
+    public void create(ShoppingList shoppingList) {
+        shoppingList.setLastViewDate(new Date());
+        shoppingListRepository.save(shoppingList);
+    }
 
-	@Override
-	public void update(String id, ShoppingList shoppingList) {
-		shoppingList.setLastViewDate(new Date());
-		shoppingList.setId(id);
-		shoppingListRepository.save(shoppingList);
-	}
+    @Override
+    public void update(String id, ShoppingList shoppingList) {
+        shoppingList.setLastViewDate(new Date());
+        shoppingList.setId(id);
+        shoppingListRepository.save(shoppingList);
+    }
 
-	@Override
-	public void delete(String id) {
-		shoppingListRepository.delete(id);
-	}
+    @Override
+    public void delete(String id) {
+        shoppingListRepository.delete(id);
+    }
 
     @Override
     public Long count() {

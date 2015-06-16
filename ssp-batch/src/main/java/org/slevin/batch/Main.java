@@ -14,7 +14,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String[] springConfig  =
+        String[] springConfig =
                 {
                         "classpath*:META-INF/spring/config/context.xml",
                         "classpath*:META-INF/spring/jobs/job-accounts.xml"
@@ -40,8 +40,5 @@ public class Main {
 
     }
 
-
-
-    
 
 }

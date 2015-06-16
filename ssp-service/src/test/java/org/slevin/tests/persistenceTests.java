@@ -1,7 +1,5 @@
 package org.slevin.tests;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slevin.common.Account;
@@ -11,8 +9,8 @@ import org.slevin.dao.RoleDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.transaction.annotation.Transactional;
 
+import static org.junit.Assert.assertEquals;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -24,7 +22,6 @@ public class persistenceTests {
 
     @Autowired
     RoleDao roleDao;
-
 
 
     @Test

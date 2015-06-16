@@ -16,120 +16,121 @@
 
                 <h:form id="form1">
 
-                        <p:growl id="messages" showDetail="true"/>
+                    <p:growl id="messages" showDetail="true"/>
 
 
-                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
-                        <!-- Form Name -->
-                        <legend id="newUser">New User</legend>
+                    <!-- Form Name -->
+                    <legend id="newUser">New User</legend>
 
 
-                        <!-- Text input-->
-                        <div class="form-group ">
-                            <label class="col-md-4 control-label" for="username">Username</label>
+                    <!-- Text input-->
+                    <div class="form-group ">
+                        <label class="col-md-4 control-label" for="username">Username</label>
 
-                            <div class="col-md-5">
-                                <p:inputText id="username" value="#{accountMB.bean.username}"
-                                             required="true" label="Username" placeholder="Username"
-                                             requiredMessage="Required"/>
+                        <div class="col-md-5">
+                            <p:inputText id="username" value="#{accountMB.bean.username}"
+                                         required="true" label="Username" placeholder="Username"
+                                         requiredMessage="Required"/>
 
-                            </div>
                         </div>
+                    </div>
 
-                        <br></br>
-                        <br></br>
+                    <br></br>
+                    <br></br>
                     <br></br>
 
 
-                        <!-- Text input-->
-                        <div class="form-group ">
-                            <label class="col-md-4 control-label" for="password">Password</label>
+                    <!-- Text input-->
+                    <div class="form-group ">
+                        <label class="col-md-4 control-label" for="password">Password</label>
 
-                            <div class="col-md-5">
-                                <p:password id="password" value="#{accountMB.bean.password}" feedback="true" inline="true"/>
-                            </div>
+                        <div class="col-md-5">
+                            <p:password id="password" value="#{accountMB.bean.password}" feedback="true" inline="true"/>
                         </div>
+                    </div>
 
                     <br></br>
                     <br></br>
 
 
-                        <!-- Text input-->
-                        <div class="form-group ">
-                            <label class="col-md-4 control-label" for="passwordCheck">Confirm
-                            </label>
+                    <!-- Text input-->
+                    <div class="form-group ">
+                        <label class="col-md-4 control-label" for="passwordCheck">Confirm
+                        </label>
 
-                            <div class="col-md-5">
-                                <p:password id="passwordCheck" value="#{accountMB.passwordCheck}" feedback="true" inline="true"/>
-                            </div>
+                        <div class="col-md-5">
+                            <p:password id="passwordCheck" value="#{accountMB.passwordCheck}" feedback="true"
+                                        inline="true"/>
                         </div>
+                    </div>
 
                     <br></br>
                     <br></br>
 
-                        <!-- Text input-->
-                        <div class="form-group ">
-                            <label class="col-md-4 control-label" for="email">Email</label>
+                    <!-- Text input-->
+                    <div class="form-group ">
+                        <label class="col-md-4 control-label" for="email">Email</label>
 
-                            <div class="col-md-5">
-                                <p:inputText id="email" value="#{accountMB.bean.email}"
-                                             required="true" label="Email" placeholder="Email"
-                                             requiredMessage="Required"/>
-                            </div>
+                        <div class="col-md-5">
+                            <p:inputText id="email" value="#{accountMB.bean.email}"
+                                         required="true" label="Email" placeholder="Email"
+                                         requiredMessage="Required"/>
                         </div>
+                    </div>
 
                     <br></br>
                     <br></br>
 
-                        <!-- Radio input-->
-                        <div class="form-group">
-                            <label class="col-md-4 control-label" for="role">Role</label>
+                    <!-- Radio input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="role">Role</label>
 
-                            <div class="col-md-5">
+                        <div class="col-md-5">
 
-                                <p:selectOneRadio id="role" value="#{accountMB.role}" layout="grid" columns="1">
-                                    <f:selectItem itemLabel=" Administrator" itemValue="ROLE_ADMIN"/>
-                                    <f:selectItem itemLabel=" User" itemValue="ROLE_USER"/>
-                                </p:selectOneRadio>
+                            <p:selectOneRadio id="role" value="#{accountMB.role}" layout="grid" columns="1">
+                                <f:selectItem itemLabel=" Administrator" itemValue="ROLE_ADMIN"/>
+                                <f:selectItem itemLabel=" User" itemValue="ROLE_USER"/>
+                            </p:selectOneRadio>
 
 
-                            </div>
                         </div>
+                    </div>
 
                     <br></br>
                     <br></br>
                     <br></br>
 
-                        <!-- Checkbox input-->
-                        <div class="form-group">
-                            <label class="col-md-4 control-label" for="enabled">Enabled</label>
+                    <!-- Checkbox input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="enabled">Enabled</label>
 
-                            <div class="col-md-5">
-                                <p:selectBooleanCheckbox id="enabled" value="#{accountMB.bean.enabled}"/>
+                        <div class="col-md-5">
+                            <p:selectBooleanCheckbox id="enabled" value="#{accountMB.bean.enabled}"/>
 
-                            </div>
                         </div>
+                    </div>
 
                     <br></br>
                     <br></br>
 
 
-                        <div class="form-group">
-                            <label class="col-md-4 "></label>
+                    <div class="form-group">
+                        <label class="col-md-4 "></label>
 
-                            <div class="col-md-6">
+                        <div class="col-md-6">
 
-                                <p:commandButton value="Reset" styleClass=""
-                                                 update=":form1" process="@this"
-                                                 actionListener="#{accountMB.reset}" />
-                                <p:commandButton value="Save" styleClass=""
-                                                 actionListener="#{accountMB.save}"
-                                                 update=":form1:messages, :form1"/>
+                            <p:commandButton value="Reset" styleClass=""
+                                             update=":form1" process="@this"
+                                             actionListener="#{accountMB.reset}"/>
+                            <p:commandButton value="Save" styleClass=""
+                                             actionListener="#{accountMB.save}"
+                                             update=":form1:messages, :form1"/>
 
 
-                            </div>
                         </div>
+                    </div>
 
                 </h:form>
 

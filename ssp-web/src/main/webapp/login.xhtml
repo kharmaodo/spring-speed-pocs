@@ -4,78 +4,80 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+        >
 <h:body>
 
     <ui:composition template="/WEB-INF/tags/layout.xhtml">
         <ui:define name="content">
-            <ui:param name="root" value="#{request.scheme}://#{request.serverName}:#{request.serverPort}#{request.contextPath}"/>
+            <ui:param name="root"
+                      value="#{request.scheme}://#{request.serverName}:#{request.serverPort}#{request.contextPath}"/>
 
-        <div class="main">
-            <div class="container tim-container">
-                <div class="row">
+            <div class="main">
+                <div class="container tim-container">
+                    <div class="row">
 
-                    <div class="modal-dialog login center-block" style="max-width: 400px">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title"></h4>
-                            </div>
-                            <div class="modal-body">
-                                <div class="box">
-                                    <div class="content">
-                                        <div class="social">
-                                            <h2>Azaddyne Tutorial</h2>
-                                        </div>
-                                        <div class="division">
-                                            <div class="line l"></div>
-                                            <span>Login</span>
+                        <div class="modal-dialog login center-block" style="max-width: 400px">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title"></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="box">
+                                        <div class="content">
+                                            <div class="social">
+                                                <h2>Azaddyne Tutorial</h2>
+                                            </div>
+                                            <div class="division">
+                                                <div class="line l"></div>
+                                                <span>Login</span>
 
-                                            <div class="line r"></div>
-                                        </div>
+                                                <div class="line r"></div>
+                                            </div>
 
 
-                                        <div class="form loginBox" style="display: block;">
-                                            <form method="post"
-                                                  action="#{root}/j_spring_security_check"
-                                                  authentication-failure-handler-ref="authenticationFailureHandler">
-                                                <input type="hidden" name="${_csrf.parameterName}"
-                                                       value="${_csrf.token}"/> <input id="email"
-                                                                                       class="form-control" type="text"
-                                                                                       placeholder="Username"
-                                                                                       name="username"></input> <input
-                                                    id="password"
-                                                    class="form-control" type="password" placeholder="Password"
-                                                    name="password"></input> <input id="loginButton"
-                                                    class="btn btn-default btn-login" type="submit"
-                                                    value="Login"></input>
+                                            <div class="form loginBox" style="display: block;">
+                                                <form method="post"
+                                                      action="#{root}/j_spring_security_check"
+                                                      authentication-failure-handler-ref="authenticationFailureHandler">
+                                                    <input type="hidden" name="${_csrf.parameterName}"
+                                                           value="${_csrf.token}"/> <input id="email"
+                                                                                           class="form-control"
+                                                                                           type="text"
+                                                                                           placeholder="Username"
+                                                                                           name="username"></input>
+                                                    <input
+                                                            id="password"
+                                                            class="form-control" type="password" placeholder="Password"
+                                                            name="password"></input> <input id="loginButton"
+                                                                                            class="btn btn-default btn-login"
+                                                                                            type="submit"
+                                                                                            value="Login"></input>
 
-                                            </form>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="modal-footer">
-                                <div class="forgot login-footer" style="display: block;">
+                                <div class="modal-footer">
+                                    <div class="forgot login-footer" style="display: block;">
 								<span>No account ? <a
                                         href="#{root}/accounts/signin"> Signin.</a>
 								</span>
-                                </div>
+                                    </div>
 
+                                </div>
                             </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- end main -->
+            <!-- end main -->
 
-    </ui:define>
-</ui:composition>
-
+        </ui:define>
+    </ui:composition>
 
 
 </h:body>
-        </html>
+</html>

@@ -2,10 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:p="http://primefaces.org/ui"
       xmlns:sec="http://www.springframework.org/security/tags"
         >
 <body>
@@ -50,7 +47,7 @@
                                                         data-toggle="dropdown">Accounts <span class="caret"></span></a>
                                     <ul class="dropdown-menu" role="menu">
                                         <li><a id="accountsAll"
-                                                href="#{request.contextPath}/accounts/all">
+                                               href="#{request.contextPath}/accounts/all">
                                             All accounts </a></li>
                                         <li class="divider"></li>
                                         <li><a id="accountNew" href="#{request.contextPath}/accounts/new">

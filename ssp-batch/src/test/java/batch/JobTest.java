@@ -21,15 +21,15 @@ public class JobTest {
     @Autowired
     private JobLauncherTestUtils jobLauncherTestUtils;
 
-    
+
     @Test
     public void launchJob() throws Exception {
 
         //JobExecution jobExecution = jobLauncherTestUtils.launchJob();
-        
+
         JobExecution jobExecution = jobLauncherTestUtils.launchStep("step1");
-        
+
         assertEquals(BatchStatus.COMPLETED, jobExecution.getStatus());
-        
+
     }
 }

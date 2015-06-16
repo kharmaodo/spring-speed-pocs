@@ -8,6 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Component
 @Transactional
-public class RoleService extends EntityService<Role> implements RoleDao{
+public class RoleService extends EntityService<Role> implements RoleDao {
 
 }

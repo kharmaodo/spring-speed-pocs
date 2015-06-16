@@ -3,7 +3,6 @@ package org.slevin.cucumber.navigation;
 import cucumber.annotation.en.Given;
 import cucumber.annotation.en.Then;
 import cucumber.annotation.en.When;
-import cucumber.runtime.PendingException;
 import junit.framework.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,8 +20,6 @@ public class NavigationSteps {
     public final static String ACCOUNT_NEW = "accountNew";
     public final static String ACCOUNT_List = "accountList";
     public final static String NEW_USER = "newUser";
-
-
 
 
     @Given("^I click on accounts menu$")
@@ -54,8 +51,6 @@ public class NavigationSteps {
         WebElement newUserPage = driver.findElement(By.id(NEW_USER));
         Assert.assertTrue(newUserPage.getText().contains("New User"));
     }
-
-
 
 
 }

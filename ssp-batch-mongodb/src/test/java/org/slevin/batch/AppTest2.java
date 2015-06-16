@@ -10,17 +10,17 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 @ContextConfiguration(locations = {"classpath:META-INF/spring/jobs/job-report.xml", "classpath:META-INF/spring/config/context.xml",
-        "classpath:META-INF/spring/config/database.xml", "classpath:spring/batch/config/test-context.xml" })
+        "classpath:META-INF/spring/config/database.xml", "classpath:spring/batch/config/test-context.xml"})
 public class AppTest2 extends AbstractTestNGSpringContextTests {
 
-	@Autowired
-	private JobLauncherTestUtils jobLauncherTestUtils;
+    @Autowired
+    private JobLauncherTestUtils jobLauncherTestUtils;
 
-	@Test
-	public void launchJob() throws Exception {
+    @Test
+    public void launchJob() throws Exception {
 
-		JobExecution jobExecution = jobLauncherTestUtils.launchJob();
-		Assert.assertEquals(jobExecution.getStatus(), BatchStatus.COMPLETED);
+        JobExecution jobExecution = jobLauncherTestUtils.launchJob();
+        Assert.assertEquals(jobExecution.getStatus(), BatchStatus.COMPLETED);
 
-	}
+    }
 }

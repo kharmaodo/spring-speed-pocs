@@ -27,7 +27,7 @@
         <div class="unstyled" ui-sortable ng-model="lists">
             <hr>
             <p ng-repeat="list in lists"><a ng-click="loadList(list);"
-                                              class="btn btn-block btn-primary">{{list.name}}</a></p>
+                                            class="btn btn-block btn-primary">{{list.name}}</a></p>
 
         </div>
 
@@ -47,13 +47,12 @@
                 <hr>
                 <p class="input-group" ng-repeat="item in currentList.items">
 
-                        <input type="text" ng-model="item.name" class="form-control">
+                    <input type="text" ng-model="item.name" class="form-control">
                         <span class="input-group-btn">
                             <button class="btn btn-danger" ng-click="removeItem(item)" aria-label="Remove">X</button>
                         </span>
 
                 </p>
-
 
 
             </div>

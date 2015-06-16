@@ -1,18 +1,7 @@
 package org.slevin.faces.bean;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.annotation.PostConstruct;
-import javax.faces.application.FacesMessage;
-import javax.faces.application.ResourceDependencies;
-import javax.faces.bean.ViewScoped;
-import javax.faces.context.FacesContext;
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.hibernate.service.spi.InjectService;
 import org.primefaces.context.RequestContext;
 import org.primefaces.event.RowEditEvent;
 import org.slevin.common.Account;
@@ -21,6 +10,14 @@ import org.slevin.dao.AccountDao;
 import org.slevin.dao.RoleDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
+import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by jacky on 02/01/15.
@@ -41,7 +38,6 @@ public class AccountMB implements Serializable {
     private List<Account> listSelected;
 
 
-
     @Autowired
     private AccountDao accountService;
 
@@ -50,13 +46,12 @@ public class AccountMB implements Serializable {
 
 
     @PostConstruct
-    public void init(){
+    public void init() {
         refreshList();
     }
 
 
-    
-    public void refreshList(){
+    public void refreshList() {
         this.bean = new Account();
         this.beanSelected = new Account();
         this.list = new ArrayList<Account>();
@@ -71,10 +66,9 @@ public class AccountMB implements Serializable {
     }
 
 
-
     public void save() {
         try {
-            if(bean.getPassword().equals(this.passwordCheck)){
+            if (bean.getPassword().equals(this.passwordCheck)) {
                 this.bean.setPassword(Account.md5(this.bean.getPassword()));
                 accountService.persist(this.bean);
                 Role roleTmp = new Role();
@@ -82,15 +76,14 @@ public class AccountMB implements Serializable {
                 roleTmp.setName(this.role);
                 roleService.persist(roleTmp);
                 refreshList();
-            }else{
+            } else {
                 notificationError("Password don't match");
             }
 
 
-
             notificationSuccess("persist Account");
         } catch (Exception e) {
-            notificationError(e,"persist Account");
+            notificationError(e, "persist Account");
             e.printStackTrace();
         }
     }
@@ -101,7 +94,7 @@ public class AccountMB implements Serializable {
             refreshList();
             notificationSuccess("update Account");
         } catch (Exception e) {
-            notificationError(e,"update Account");
+            notificationError(e, "update Account");
         }
     }
 
@@ -112,7 +105,7 @@ public class AccountMB implements Serializable {
             roleService.remove(roleService.findByProperty("username", this.beanSelected.getUsername()).get(0).getId());
             notificationSuccess("delete Account");
         } catch (Exception e) {
-            notificationError(e,"delete Account");
+            notificationError(e, "delete Account");
         }
     }
 
@@ -128,7 +121,7 @@ public class AccountMB implements Serializable {
 
 
     public void notificationSuccess(String operation) {
-        Logger.getLogger(this.getClass().getName()).log(Level.INFO, "Operation "+operation+" success");
+        Logger.getLogger(this.getClass().getName()).log(Level.INFO, "Operation " + operation + " success");
         FacesMessage msg = null;
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Notification", "Success");
         FacesContext.getCurrentInstance().addMessage(null, msg);
@@ -136,7 +129,7 @@ public class AccountMB implements Serializable {
 
 
     public void notificationError(Exception e, String operation) {
-        Logger.getLogger(this.getClass().getName()).log(Level.ERROR, "Operation "+operation+" Error ",e);
+        Logger.getLogger(this.getClass().getName()).log(Level.ERROR, "Operation " + operation + " Error ", e);
         FacesMessage msg = null;
         msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Notification", "Error");
         FacesContext.getCurrentInstance().addMessage(null, msg);
@@ -174,7 +167,7 @@ public class AccountMB implements Serializable {
     }
 
     public List<Account> getList() {
-        if(list == null){
+        if (list == null) {
             list = new ArrayList<Account>();
         }
         return list;

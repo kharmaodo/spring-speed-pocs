@@ -15,14 +15,14 @@ import org.testng.annotations.Test;
         "classpath:spring/batch/config/test-context.xml"})
 public class JobExecutionTest extends AbstractTestNGSpringContextTests {
 
-	@Autowired
-	private JobLauncherTestUtils jobLauncherTestUtils;
+    @Autowired
+    private JobLauncherTestUtils jobLauncherTestUtils;
 
-	@Test
-	public void launchJob() throws Exception {
+    @Test
+    public void launchJob() throws Exception {
 
-		JobExecution jobExecution = jobLauncherTestUtils.launchJob();
-		Assert.assertEquals(jobExecution.getStatus(), BatchStatus.COMPLETED);
+        JobExecution jobExecution = jobLauncherTestUtils.launchJob();
+        Assert.assertEquals(jobExecution.getStatus(), BatchStatus.COMPLETED);
 
-	}
+    }
 }

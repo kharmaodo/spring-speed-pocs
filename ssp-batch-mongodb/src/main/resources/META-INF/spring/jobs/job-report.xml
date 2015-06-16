@@ -1,5 +1,5 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:batch="http://www.springframework.org/schema/batch" xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:batch="http://www.springframework.org/schema/batch"
        xmlns:util="http://www.springframework.org/schema/util" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/batch
 		http://www.springframework.org/schema/batch/spring-batch-2.2.xsd
@@ -9,7 +9,7 @@
 		http://www.springframework.org/schema/util/spring-util-3.2.xsd">
 
 
-    <bean id="itemProcessor" class="org.slevin.batch.processor.ReportItemProcessor" />
+    <bean id="itemProcessor" class="org.slevin.batch.processor.ReportItemProcessor"/>
 
     <batch:job id="reportJob">
         <batch:step id="step1" next="step2">
@@ -75,7 +75,7 @@
           scope="step">
         <property name="template" ref="mongoTemplate"/>
         <property name="targetType" value="org.slevin.batch.model.Report"/>
-        <property name="query" value="{}" />
+        <property name="query" value="{}"/>
         <property name="sort">
             <util:map id="sort">
                 <entry key="id" value=""/>

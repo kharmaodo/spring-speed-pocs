@@ -13,18 +13,18 @@
     <name>ssp-batch-mongodb</name>
 
     <dependencies>
-    <!-- SSP SERVICE -->
-    <dependency>
-        <groupId>org.slevin</groupId>
-        <artifactId>ssp-service</artifactId>
+        <!-- SSP SERVICE -->
+        <dependency>
+            <groupId>org.slevin</groupId>
+            <artifactId>ssp-service</artifactId>
 
 
-    </dependency>
+        </dependency>
 
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-aop</artifactId>
-    </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+        </dependency>
 
         <!-- Spring Core -->
         <dependency>
