@@ -1,6 +1,6 @@
 package org.meliodas.web.controller.service;
 
-import org.meliodas.domain.ShoppingList;
+import org.meliodas.persistence.model.ShoppingList;
 import org.meliodas.persistence.service.IShoppingListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

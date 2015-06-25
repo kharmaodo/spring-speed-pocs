@@ -1,8 +1,8 @@
 package org.meliodas.persistence.service.impl;
 
-import org.meliodas.domain.ShoppingList;
+import org.meliodas.persistence.model.ShoppingList;
 import org.meliodas.persistence.service.IShoppingListService;
-import org.meliodas.repositories.ShoppingListRepository;
+import org.meliodas.persistence.repositories.ShoppingListRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;

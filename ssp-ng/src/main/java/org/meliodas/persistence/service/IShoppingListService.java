@@ -1,6 +1,6 @@
 package org.meliodas.persistence.service;
 
-import org.meliodas.domain.ShoppingList;
+import org.meliodas.persistence.model.ShoppingList;
 
 import java.util.List;
 

@@ -1,33 +1,26 @@
 package org.slevin.tests;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-
-import org.junit.runner.RunWith;
 import org.slevin.common.Account;
 import org.slevin.dao.AccountDao;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by jacky on 23/03/15.
- */
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 public class DaoTests {
 
     private static AccountDao accountService;
 
     @BeforeClass
-    public static void init() throws Exception{
+    public static void init() throws Exception {
         MockTheDao();
     }
-
 
 
     @Test

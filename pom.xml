@@ -26,6 +26,7 @@
         <module>ssp-batch</module>
         <module>ssp-batch-mongodb</module>
         <module>ssp-ng</module>
+        <module>ssp-data</module>
     </modules>
 
     <properties>
