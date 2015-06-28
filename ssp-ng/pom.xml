@@ -13,6 +13,8 @@
     <artifactId>ssp-ng</artifactId>
     <packaging>war</packaging>
 
+    <!--SSP-NG DONT WORK WITH LAST VERSION OF SPRING -->
+
     <dependencies>
         <!-- Spring -->
         <dependency>
@@ -45,6 +47,12 @@
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <scope>runtime</scope>
+        </dependency>
+
+        <!--slf4j-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
         </dependency>
 
         <!-- test -->

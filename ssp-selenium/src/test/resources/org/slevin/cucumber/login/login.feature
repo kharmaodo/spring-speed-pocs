@@ -1,4 +1,4 @@
-Feature: Login on ssp-web
+Feature: Login on ssp-prime
   As an user
   I want to login
 

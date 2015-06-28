@@ -1,4 +1,4 @@
-Feature: Navigation on ssp-web
+Feature: Navigation on ssp-prime
   As an user
   I want to navigate on accounts pages
 

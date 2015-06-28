@@ -15,7 +15,7 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 public class LoginSteps {
 
     private WebDriver driver = new HtmlUnitDriver();
-    public final static String CONTEXT = "http://localhost:8080/ssp-web/";
+    public final static String CONTEXT = "http://localhost:8080/ssp-prime/";
     public final static String EMAIL = "email";
     public final static String PASSWORD = "password";
     public final static String SUBMIT = "loginButton";

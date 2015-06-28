@@ -20,7 +20,8 @@
 
 
     <modules>
-        <module>ssp-web</module>
+        <!--TODO ADD SPRING WEB MVC AND SECURITY MODULE-->
+        <module>ssp-prime</module>
         <module>ssp-service</module>
         <module>ssp-selenium</module>
         <module>ssp-batch</module>
@@ -30,10 +31,17 @@
     </modules>
 
     <properties>
-        <spring.framework.version>4.0.3.RELEASE</spring.framework.version>
-        <spring.security.version>3.2.5.RELEASE</spring.security.version>
+        <spring.framework.version>4.1.6.RELEASE</spring.framework.version>
+        <!--<spring.security.version>4.0.1.RELEASE</spring.security.version>-->
+
+        <!--Prime faces and spring security taglib are not compatible with the last version of spring security-->
+        <!--Waiting for the fix :)-->
+        <spring.security.version>3.2.7.RELEASE</spring.security.version>
+
+        <spring.security.taglib.version>3.2.7.RELEASE</spring.security.taglib.version>
         <spring.data.version>1.7.0.RELEASE</spring.data.version>
         <spring.batch.version>3.0.4.RELEASE</spring.batch.version>
+        <junit.version>4.12</junit.version>
     </properties>
 
     <dependencyManagement>
@@ -96,6 +104,17 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-core</artifactId>
+                <version>${spring.framework.version}</version>
+            </dependency>
+            <!--Spring beans-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-expression</artifactId>
                 <version>${spring.framework.version}</version>
             </dependency>
             <!-- Spring AOP -->
@@ -193,7 +212,8 @@
             <dependency>
                 <groupId>org.springframework.security</groupId>
                 <artifactId>spring-security-taglibs</artifactId>
-                <version>${spring.security.version}</version>
+                <!--<version>${spring.security.version}</version>-->
+                <version>${spring.security.taglib.version}</version>
             </dependency>
 
             <!-- Spring Tests -->
@@ -211,6 +231,12 @@
                 <version>1.8.1</version>
             </dependency>
 
+            <!--Javax inject-->
+            <dependency>
+                <groupId>javax.inject</groupId>
+                <artifactId>javax.inject</artifactId>
+                <version>1</version>
+            </dependency>
 
             <!-- Servlet -->
             <dependency>
@@ -227,17 +253,20 @@
                 <version>2.1.6</version>
             </dependency>
 
+            <!--Faces library-->
             <dependency>
                 <groupId>com.sun.faces</groupId>
                 <artifactId>jsf-impl</artifactId>
                 <version>2.1.6</version>
             </dependency>
 
+            <!--Servlet JSTL-->
             <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>jstl</artifactId>
                 <version>1.2</version>
             </dependency>
+
             <!-- Primefaces Version 5 -->
             <dependency>
                 <groupId>org.primefaces</groupId>
@@ -250,12 +279,14 @@
                 <artifactId>all-themes</artifactId>
                 <version>1.0.9</version>
             </dependency>
+
             <!-- SPRING FACES -->
             <dependency>
                 <groupId>org.springframework.webflow</groupId>
                 <artifactId>spring-faces</artifactId>
                 <version>2.4.0.RELEASE</version>
             </dependency>
+
             <!-- PRETTY FACES -->
             <dependency>
                 <groupId>com.ocpsoft</groupId>
@@ -263,18 +294,32 @@
                 <version>3.3.2</version>
             </dependency>
 
-
             <!-- DBCP Pooling jdbc connections -->
             <dependency>
                 <groupId>commons-dbcp</groupId>
                 <artifactId>commons-dbcp</artifactId>
                 <version>1.2.2</version>
             </dependency>
+
+            <!--Google -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>18.0</version>
+            </dependency>
+
             <!-- Logging the application's event -->
             <dependency>
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>
                 <version>1.2.16</version>
+            </dependency>
+
+            <!--slf4j-->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>1.7.12</version>
             </dependency>
 
             <!-- Testng -->
@@ -284,11 +329,12 @@
                 <version>6.8.5</version>
                 <scope>test</scope>
             </dependency>
+
             <!-- JUNIT 4 library -->
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
-                <version>4.7</version>
+                <version>${junit.version}</version>
                 <scope>test</scope>
             </dependency>
 
@@ -300,6 +346,7 @@
                 <scope>test</scope>
             </dependency>
 
+            <!--Lombok for generating getter and setter with annotations -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>

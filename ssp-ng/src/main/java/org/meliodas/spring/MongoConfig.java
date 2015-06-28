@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 @Configuration
 @ComponentScan({"org.meliodas.persistence"})
-@EnableMongoRepositories(basePackages = "org.meliodas.repositories")
+@EnableMongoRepositories(basePackages = "org.meliodas.persistence")
 @PropertySource({"classpath:mongo.properties"})
 public class MongoConfig extends AbstractMongoConfiguration {
 

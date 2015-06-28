@@ -26,8 +26,8 @@ public class Application implements CommandLineRunner {
 
     public void run(String... strings) throws Exception {
 
-        customerRepository.save(new Customer("rim", "ouannane", "rim.ouannane@springboot.com"));
-        customerRepository.save(new Customer("rim2", "ouannane2", "rim.ouannane2@springboot.com"));
+        customerRepository.save(new Customer("test1", "test", "test1@springboot.com"));
+        customerRepository.save(new Customer("test2", "test2", "test2@springboot.com"));
         customerRepository.save(new Customer("kamal", "azaddyne", "kamal.azaddyne@springboot.com"));
 
 

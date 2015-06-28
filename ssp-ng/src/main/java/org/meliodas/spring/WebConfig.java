@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "org.meliodas.web")
+@ComponentScan(basePackages = "org.meliodas.web.controller.service")
 public class WebConfig extends WebMvcConfigurerAdapter {
 
 }
