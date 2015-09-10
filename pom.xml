@@ -28,6 +28,7 @@
         <module>ssp-batch-mongodb</module>
         <module>ssp-ng</module>
         <module>ssp-data</module>
+        <module>ssp-datasources</module>
     </modules>
 
     <properties>
@@ -42,6 +43,7 @@
         <spring.data.version>1.7.0.RELEASE</spring.data.version>
         <spring.batch.version>3.0.4.RELEASE</spring.batch.version>
         <junit.version>4.12</junit.version>
+        <lombok.version>1.16.4</lombok.version>
     </properties>
 
     <dependencyManagement>
@@ -59,6 +61,13 @@
                 <groupId>joda-time</groupId>
                 <artifactId>joda-time</artifactId>
                 <version>1.6.2</version>
+            </dependency>
+
+            <!--Axessors Generator-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
             </dependency>
 
 
