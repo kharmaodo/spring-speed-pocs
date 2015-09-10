@@ -14,6 +14,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -37,8 +38,13 @@ public class CategoConfig {
 
     @Bean(name = "categoDataSource")
     @ConfigurationProperties(prefix = "spring.categoDataSource")
-    public DataSource barDataSource() {
+    public DataSource categoDataSource() {
         return DataSourceBuilder.create().build();
+    }
+
+    @Bean(name = "jdbcCatego")
+    public JdbcTemplate jdbcTemplate(@Qualifier("categoDataSource") DataSource categoDataSource) {
+        return new JdbcTemplate(categoDataSource);
     }
 
     @Autowired
@@ -60,5 +66,7 @@ public class CategoConfig {
             @Qualifier("categoEntityManagerFactory") EntityManagerFactory factory) {
         return new JpaTransactionManager(factory);
     }
+
+
 
 }
