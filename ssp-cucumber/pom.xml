@@ -23,6 +23,13 @@
     </build>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.slevin</groupId>
+            <artifactId>ssp-server</artifactId>
+            <scope>test</scope>
+        </dependency>
+
         <!-- JUnit -->
         <dependency>
             <groupId>junit</groupId>

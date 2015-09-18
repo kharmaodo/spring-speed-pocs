@@ -6,3 +6,5 @@ Feature: Login on ssp-prime
     Given the email "admin" and password "admin"
     When I click on login
     Then I will be on welcome page
+
+
