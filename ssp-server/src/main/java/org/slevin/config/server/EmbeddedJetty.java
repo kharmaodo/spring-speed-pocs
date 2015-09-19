@@ -16,7 +16,15 @@ public class EmbeddedJetty {
     public static final int DEFAULT_PORT = 9090;
 
     private int serverPort;
+    private Object resource;
     private Server server;
+
+    //todo use RUNNABLE THREAD
+
+    public EmbeddedJetty(int serverPort, Object resource){
+        this.serverPort = serverPort;
+        this.resource = resource;
+    }
 
     private Server configureServer(Object resource) {
         ResourceConfig resourceConfig = new ResourceConfig();
@@ -33,15 +41,37 @@ public class EmbeddedJetty {
     }
 
 
-    public void start(int serverPort, Object resource) throws Exception {
-        this.serverPort = serverPort;
-        server = configureServer(resource);
-        server.start();
-        server.join();
+    public void start() {
+
+        try {
+            server = configureServer(resource);
+            server.start();
+            System.out.println("Server started at port " + DEFAULT_PORT + " with context handler for /hello");
+//            server.join();
+            System.out.println("Joining server");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
     }
 
-    public void stop() throws Exception {
-        this.server.stop();
+    public void stop() {
+        System.out.println("Stop server");
+        try {
+            this.server.stop();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
+    public boolean isStarted(){
+        return this.server.isStarted();
+    }
+
+    public boolean isStopped(){
+        return this.server.isStopped();
+    }
+
 
 }

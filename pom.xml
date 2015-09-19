@@ -399,6 +399,14 @@
                 <version>2.21</version>
             </dependency>
 
+            <!--Jersey Client-->
+            <dependency>
+                <groupId>org.glassfish.jersey.core</groupId>
+                <artifactId>jersey-client</artifactId>
+                <version>2.21</version>
+            </dependency>
+
+
 
 
             <!--JAVAX XML-->
