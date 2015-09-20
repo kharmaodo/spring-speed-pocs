@@ -2,9 +2,6 @@ package org.slevin.config;
 
 import org.slevin.config.resource.HelloWorldResource;
 import org.slevin.config.server.EmbeddedJetty;
-import org.slevin.config.server.ServerThread;
-
-import java.awt.*;
 
 /**
  * Created by jacky on 18/09/15.
