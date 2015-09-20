@@ -30,6 +30,7 @@
         <module>ssp-data</module>
         <module>ssp-datasources</module>
         <module>ssp-server</module>
+        <module>ssp-mvc</module>
     </modules>
 
     <properties>

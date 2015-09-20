@@ -12,18 +12,12 @@
     <packaging>war</packaging>
 
     <dependencies>
-        <!-- SSP SERVICE -->
-        <dependency>
-            <groupId>org.slevin</groupId>
-            <artifactId>ssp-service</artifactId>
-        </dependency>
 
 
         <!-- Servlet -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
             <scope>provided</scope>
         </dependency>
         <!-- JSF library -->
