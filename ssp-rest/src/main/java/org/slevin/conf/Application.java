@@ -1,13 +1,20 @@
-package org.slevin;
+package org.slevin.conf;
 
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.orm.jpa.EntityScan;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ImportResource;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import java.util.Arrays;
 
 @SpringBootApplication
+@ComponentScan({"org.slevin","org.meliodas"})
+@EnableJpaRepositories("org.meliodas.persistence.repository")
+@EntityScan("org.meliodas.persistence.model")
 public class Application {
 
     public static void main(String[] args) {

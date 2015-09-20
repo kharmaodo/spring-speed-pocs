@@ -1,26 +1,38 @@
 package org.slevin.controller;
 
-import org.slevin.common.Account;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+
+import org.meliodas.persistence.model.Customer;
+import org.meliodas.persistence.repository.CustomerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 @RestController
 public class HelloWorldController {
+
+    @Autowired
+    private CustomerRepository customerRepository;
 
     @RequestMapping("/")
     public String index() {
         return "Greetings from Spring Boot!";
     }
 
-    @RequestMapping(value="/account/{name}", method= RequestMethod.POST)
-    public Account greeting(@PathVariable("name") String name) {
-        Account account = new Account();
-        account.setUsername(name);
-        account.setEmail(name+"@gmail.com");
-        account.setPassword("pass");
-        return account;
+    @RequestMapping(value="/{name}", method= RequestMethod.GET)
+    @ResponseBody
+    public Customer newCustomer(@PathVariable("name") String name) {
+        Customer customer = new Customer(name,"azaddyne","@mail");
+        customerRepository.save(customer);
+        return customer;
+    }
+
+    @RequestMapping(value="/all", method= RequestMethod.GET)
+    @ResponseBody
+    public Iterable<Customer> all() throws Exception {
+        return customerRepository.findAll();
     }
 
 }

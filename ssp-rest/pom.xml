@@ -34,7 +34,7 @@
     <dependencies>
         <dependency>
             <groupId>org.slevin</groupId>
-            <artifactId>ssp-service</artifactId>
+            <artifactId>ssp-data</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

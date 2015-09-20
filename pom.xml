@@ -58,6 +58,11 @@
                 <artifactId>ssp-service</artifactId>
                 <version>1.2.1-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>org.slevin</groupId>
+                <artifactId>ssp-data</artifactId>
+                <version>1.2.1-SNAPSHOT</version>
+            </dependency>
 
             <!--Jetty Embedded Server ssp dependencies-->
             <dependency>
