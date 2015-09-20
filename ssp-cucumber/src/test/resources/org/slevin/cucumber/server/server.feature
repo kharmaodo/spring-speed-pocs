@@ -2,4 +2,5 @@ Feature: Running and consuming REST resources with an embedded jetty server on t
 
   Scenario:
     Given the name "Abdou"
+    When i run my service
     Then he sais "Hello, Abdou"
