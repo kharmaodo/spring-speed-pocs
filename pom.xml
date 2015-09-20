@@ -23,7 +23,7 @@
         <!--TODO ADD SPRING WEB MVC AND SECURITY MODULE-->
         <module>ssp-prime</module>
         <module>ssp-service</module>
-        <module>ssp-selenium</module>
+        <module>ssp-cucumber</module>
         <module>ssp-batch</module>
         <module>ssp-batch-mongodb</module>
         <module>ssp-ng</module>
@@ -31,6 +31,7 @@
         <module>ssp-datasources</module>
         <module>ssp-server</module>
         <module>ssp-mvc</module>
+        <module>ssp-rest</module>
     </modules>
 
     <properties>

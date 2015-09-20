@@ -12,7 +12,10 @@
     <packaging>war</packaging>
 
     <dependencies>
-
+        <dependency>
+            <groupId>org.slevin</groupId>
+            <artifactId>ssp-service</artifactId>
+        </dependency>
 
         <!-- Servlet -->
         <dependency>
