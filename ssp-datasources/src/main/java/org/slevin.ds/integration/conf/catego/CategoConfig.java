@@ -1,7 +1,7 @@
 package org.slevin.ds.integration.conf.catego;
 
-import org.slevin.ds.model.Product;
 import org.slevin.ds.integration.repositories.catego.CategoRepository;
+import org.slevin.ds.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

@@ -6,7 +6,6 @@ import org.eclipse.jetty.servlet.ServletHolder;
 import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.servlet.ServletContainer;
-import org.slevin.config.resource.HelloWorldResource;
 
 /**
  * Created by jacky on 18/09/15.

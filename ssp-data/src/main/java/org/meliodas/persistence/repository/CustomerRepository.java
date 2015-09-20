@@ -3,7 +3,6 @@ package org.meliodas.persistence.repository;
 
 import org.meliodas.persistence.model.Customer;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
