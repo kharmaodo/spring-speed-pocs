@@ -32,6 +32,7 @@
         <module>ssp-mvc</module>
         <module>ssp-rest</module>
         <module>ssp-ng</module>
+        <module>ssp-security</module>
     </modules>
 
     <properties>

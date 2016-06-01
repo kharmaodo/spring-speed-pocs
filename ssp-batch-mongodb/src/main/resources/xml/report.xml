@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<report>
+    <record id="1">
+        <date>6/1/2013</date>
+        <impression>139,237</impression>
+        <clicks>40</clicks>
+        <earning>220.90</earning>
+        <accounts>
+            <account>
+                <email>khello1@yo.com</email>
+                <enabled>false</enabled>
+                <id>1123</id>
+                <password>gello1</password>
+                <username>hello1</username>
+            </account>
+            <account>
+                <email>khello2@yo.com</email>
+                <enabled>false</enabled>
+                <id>2234</id>
+                <password>gello2</password>
+                <username>hello2</username>
+            </account>
+        </accounts>
+    </record>
+    <record id="2">
+        <date>6/2/2013</date>
+        <impression>339,100</impression>
+        <clicks>60</clicks>
+        <earning>320.88</earning>
+    </record>
+    <record id="3">
+        <date>6/3/2013</date>
+        <impression>431,436</impression>
+        <clicks>76</clicks>
+        <earning>270.80</earning>
+    </record>
+</report>
